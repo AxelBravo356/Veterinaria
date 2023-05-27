@@ -37,7 +37,7 @@ La carpeta `/src/app` contiene todas las páginas de la aplicación, cada carpet
 llamado `page.jsx` representa una
 nueva página. <br>
 Por ejemplo, la carpeta `/app/autos/page.jsx` representaría la
-ruta [http://localhost:3000/autos](http://localhost:3000/autos) de la aplicación. <br>
+ruta [http://localhost:3000/autos](http://localhost:3000/citas) de la aplicación. <br>
 Ejemplo de un archivo `page.jsx`:
 
 ```js
@@ -87,7 +87,7 @@ Utilizar `módulos CSS` o `Tailwind CSS` para estilar componentes. <br>
 
 ### Módulos CSS
 
-Una página llamada `autos` en `/src/app/autos` tendría el archivo `styles.module.css` con los estilos css:
+Una página llamada `citas` en `/src/app/cias` tendría el archivo `styles.module.css` con los estilos css:
 
 ```css
 .titulo {
