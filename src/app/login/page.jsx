@@ -1,4 +1,4 @@
-import Forms from "@/components/formulario/form";
+import Forms from "@/components/formulario";
 import "./styles.form.css"
 import Image from "next/image";
 
