@@ -1,7 +1,7 @@
 
 export default function Forms() {
   return (
-    <div className="bg-white px-10 py-20 rounded-3xl border-2 border-gray-100">
+    <div className="bg-white px-10 py-10 rounded-3xl border-2 border-gray-100">
       <h1 className="text-5xl font-semibold ">Bienvenidos</h1>
       <p className="font-medium text-lg text-gray-500 mt-4">
         ¡Bienvenidos! Por favor, ingresa tus datos
