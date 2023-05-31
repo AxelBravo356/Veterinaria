@@ -29,12 +29,12 @@ export default function Forms() {
               Recordar por 30 días
             </label>
           </div>
-          <button className="font-medium text-base text-violet-500">
+          <button className="font-medium text-base text-sky-500">
             Olvidé la contraseña
           </button>
         </div>
         <div className="mt-8 flex flex-col gap-y-4">
-          <button className=" active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 bg-violet-500 text-white text-lg font-bold rounded-xl ">
+          <button className=" active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 bg-sky-500 text-white text-lg font-bold rounded-xl ">
             Sign in
           </button>
           <button className="flex rounded-xl border-2 border-gray-100 py-3 items-center justify-center gap-2 active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all">
@@ -67,7 +67,7 @@ export default function Forms() {
         </div>
         <div className="mt-8 flex justify-centern items-center">
           <p className="font-medium text-base">¿No tienes cuenta?</p>
-          <button className="text-violet-500 text-base font-medium ml-2">Sign Up</button>
+          <button className="text-sky-500 text-base font-medium ml-2">Sign Up</button>
         </div>
       </div>
     </div>
