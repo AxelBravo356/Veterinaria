@@ -1,0 +1,9 @@
+.bg {
+  background-image: url("../../../public/Log-in.png");
+  background-size: cover;
+}
+
+.logo {
+  background-image: url("../../../public/Logo.png");
+  background-size: 50%;
+}
