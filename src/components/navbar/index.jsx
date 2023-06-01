@@ -12,7 +12,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className=" shadow-md w-full fixed top-0 left-0">
+    <div className=" shadow-md w-full  top-0 left-0">
       <div className="bg-sky-500 md:flex items-center justify-between py-4 md:px-10 px-7">
         <div
           className="font-bold text-xl cursor-pointer flex items-center font-[Poppins] 
