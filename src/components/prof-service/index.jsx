@@ -30,16 +30,16 @@ export default function ProfessionalService() {
       >
         <swiperSlide>
           <div className="p-16">
-            <div className="flex  grid-rows-2 xl:grid-cols-2 gap-1 ">
-              <div className="w-1/2 flex justify-center xl:justify-end">
+            <div className="flex  grid-row-2 xl:grid-cols-2 gap-1 ">
+              <div className="w-auto flex justify-center xl:justify-end">
                 <Image
                   src={"/Presentacion1.png"}
                   width={400}
                   height={400}
-                  className="flex xl:w-auto"
+                  className="xl:w-auto"
                 />
               </div>
-              <div className="w-1/2 text-right xl:text-right">
+              <div className="w-1/2 text-right">
                 <h3 className="font-extrabold text-5xl">
                   Professional Service
                 </h3>

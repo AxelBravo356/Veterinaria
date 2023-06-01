@@ -4,7 +4,7 @@ export default function Servicios() {
   return (
     <div className="p-5">
       <div className="flex grid-cols-3">
-        <div className="border w-1/4">
+        <div className="border w-1/6">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
             accusantium eaque in, consequatur, vel at, a nostrum fugit autem
@@ -12,7 +12,7 @@ export default function Servicios() {
             atque doloribus fuga.
           </p>
         </div>
-        <div className="border w-2/4  grid-rows-4 bg-gray-200">
+        <div className=" w-4/6  grid-rows-4 bg-gray-200">
           <div className="flex justify-center">
             <h2 className="font-bold text-3xl">Servicios</h2>
           </div>
@@ -33,14 +33,14 @@ export default function Servicios() {
             <div>Laboratorios</div>
             <div>Carnet Digital</div>
           </div>
-          <div className="text-center py-5">
+          <div className="text-xl text-center py-5">
             <p>
               Generar citas, controlar el acceso y uso de tus laboratorios, así
               como poder registrar el historial clínico de cada paciente
             </p>
           </div>
         </div>
-        <div className="border w-1/4">
+        <div className="w-1/6">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
             accusantium eaque in, consequatur, vel at, a nostrum fugit autem
