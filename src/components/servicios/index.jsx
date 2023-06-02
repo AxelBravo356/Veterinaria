@@ -1,16 +1,17 @@
 import { FaSyringe, FaGlasses, FaLaptopMedical } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Servicios() {
   return (
     <div className="p-5">
       <div className="flex grid-cols-3">
         <div className="border w-1/6">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-            accusantium eaque in, consequatur, vel at, a nostrum fugit autem
-            pariatur quam facere corporis delectus reprehenderit nihil accusamus
-            atque doloribus fuga.
-          </p>
+          <Image
+            src={"/Presentacion1_izquierda.png"}
+            width={500}
+            height={500}
+            className="h-full object-fill"
+          />
         </div>
         <div className=" w-4/6  grid-rows-4 bg-gray-200">
           <div className="flex justify-center">
@@ -41,12 +42,12 @@ export default function Servicios() {
           </div>
         </div>
         <div className="w-1/6">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-            accusantium eaque in, consequatur, vel at, a nostrum fugit autem
-            pariatur quam facere corporis delectus reprehenderit nihil accusamus
-            atque doloribus fuga.
-          </p>
+          <Image
+            src={"/Presentacion1_derecha.png"}
+            width={500}
+            height={500}
+            className="h-full object-fill"
+          />
         </div>
       </div>
     </div>
