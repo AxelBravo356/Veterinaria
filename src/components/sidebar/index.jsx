@@ -23,15 +23,11 @@ export default function Sidebar() {
 
   const router = useRouter();
 
-  const activeMenu = useMemo(
-    () => menuItems.find((menu) => menu.link === router.pathname),
-    [router.pathname]
-  );
   const wrapperClasses = classNames(
-    "h-screen px-4 pt-8 pb-4 bg-white flex justify-start flex-col w-80",
+    "h-screen px-4 pt-8 pb-4 bg-white flex justify-start flex-col w-72",
     {
       ["w-72"]: !toggleCollapse,
-      ["w-24"]: toggleCollapse,
+      ["w-28"]: toggleCollapse,
     }
   );
 
@@ -60,7 +56,7 @@ export default function Sidebar() {
     >
       <div className="flex flex-col">
         <div className="flex items-center justify-between relative">
-          <div className="flex items-center pl-1 gap-4">
+          <div className="flex items-center pl-1 gap-4 ">
             <FaCompass className="text-2xl" />
             <span
               className={classNames("mt-2 text-lg font-medium text-black", {

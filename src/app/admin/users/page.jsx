@@ -1,9 +1,15 @@
-import Layout from "@/components/layout";
+import LayoutSideBar from "@/components/layout-admin";
+import LayoutTable from "@/components/layout-table";
+import UserTable from "@/view/UserTable";
 
 export default function Users() {
   return (
-    <Layout>
-      <div></div>
-    </Layout>
+    <>
+      <LayoutSideBar>
+        <LayoutTable>
+          <UserTable />
+        </LayoutTable>
+      </LayoutSideBar>
+    </>
   );
 }

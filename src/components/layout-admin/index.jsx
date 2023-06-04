@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <>
       <NavAdmin />
-      <div className=" bg h-screen flex  justify-center">
+      <div className=" bg flex justify-center">
         <Sidebar />
         <div className="flex-1 p-1 h-full text-black ">{children}</div>
       </div>
