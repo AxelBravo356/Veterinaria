@@ -4,12 +4,12 @@ import UserTable from "@/view/UserTable";
 
 export default function Users() {
   return (
-    <>
+    <div>
       <LayoutSideBar>
         <LayoutTable>
           <UserTable />
         </LayoutTable>
       </LayoutSideBar>
-    </>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import classNames from "classnames";
 import {
   FaCompass,
@@ -24,10 +24,10 @@ export default function Sidebar() {
   const router = useRouter();
 
   const wrapperClasses = classNames(
-    "h-screen px-4 pt-8 pb-4 bg-white flex justify-start flex-col w-72",
+    "h-screen px-4 pt-8 pb-4 bg-white flex justify-start flex-col",
     {
-      ["w-72"]: !toggleCollapse,
-      ["w-28"]: toggleCollapse,
+      "w-72": !toggleCollapse,
+      "w-28": toggleCollapse,
     }
   );
 
@@ -40,6 +40,7 @@ export default function Sidebar() {
       "flex items-center cursor-pointer hover:bg-gray-200 rounded w-full overflow-hidden whitespace-nowrap"
     );
   };
+
   const onMouseOver = () => {
     setIsCollapsible(!isCollapsible);
   };
@@ -47,6 +48,7 @@ export default function Sidebar() {
   const handleSidebarToggle = () => {
     setToggleCollapse(!toggleCollapse);
   };
+
   return (
     <div
       className={wrapperClasses}
@@ -56,7 +58,7 @@ export default function Sidebar() {
     >
       <div className="flex flex-col">
         <div className="flex items-center justify-between relative">
-          <div className="flex items-center pl-1 gap-4 ">
+          <div className="flex items-center pl-1 gap-4">
             <FaCompass className="text-2xl" />
             <span
               className={classNames("mt-2 text-lg font-medium text-black", {
@@ -79,7 +81,7 @@ export default function Sidebar() {
           {menuItems.map(({ icon: Icon, ...menu }) => {
             const classes = getNavItemClasses(menu);
             return (
-              <div className={classes}>
+              <div key={menu.id} className={classes}>
                 <Link href={menu.link}>
                   <div className="flex py-4 px-3 items-center w-full h-full">
                     <div style={{ width: "2.5rem" }}>

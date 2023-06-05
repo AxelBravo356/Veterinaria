@@ -5,7 +5,7 @@ import {
   FaAngleRight,
   FaAngleDoubleRight,
 } from "react-icons/fa";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   flexRender,
   getCoreRowModel,
@@ -38,7 +38,7 @@ export default function UserTable() {
       accessorKey: "EDITAR",
       header: () => <span>Editar</span>,
       cell: (info) => (
-        <botton className="bg-sky-500 py-1 rounded">Modificar</botton>
+        <button className="font-extrabold py-1">Modificar</button>
       ),
     },
   ];
@@ -52,15 +52,12 @@ export default function UserTable() {
 
   return (
     <div className="px-6 py-4 bg-slate-200">
-      <table className="table-auto w-full ">
+      <table className="table-fixed w-full bg-slate-200">
         <thead className="bg-sky-500">
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr
-              key={headerGroup.id}
-              className="border-b border-gray-300 text-gray-600 bg-gray-100"
-            >
+            <tr key={headerGroup.id} className="text-gray-600 bg-gray-100">
               {headerGroup.headers.map((header) => (
-                <th key={header.id} className="py-2 px-4 uppercase">
+                <th key={header.id} className=" py-2 px-4 uppercase">
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -72,14 +69,14 @@ export default function UserTable() {
             </tr>
           ))}
         </thead>
-        <tbody className="bg-slate-100">
+        <tbody className="bg-white ">
           {table.getRowModel().rows.map((row) => (
             <tr
               key={row.id}
-              className="text-gray-600 text-center hover:bg-slate-100"
+              className="text-gray-600 text-center p-5 hover:bg-gray-200"
             >
               {row.getVisibleCells().map((cell) => (
-                <td key={cell.id} className="py-2 px-14 hover:bg-slate-400">
+                <td key={cell.id} className="py-2 px-14 ">
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
@@ -88,7 +85,7 @@ export default function UserTable() {
         </tbody>
       </table>
       <div className="mt-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xl">
           <button
             onClick={() => table.setPageIndex(0)}
             disabled={!table.getCanPreviousPage()}
@@ -130,7 +127,7 @@ export default function UserTable() {
           <button
             onClick={() => table.setPageIndex(table.getPageCount() - 1)}
             disabled={!table.getCanNextPage()}
-            className="text-sky-500 py-0.5 px-1 rounded-md "
+            className="text-sky-500 py-0.5 px-1 rounded-md"
           >
             <FaAngleDoubleRight />
           </button>
