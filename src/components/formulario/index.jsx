@@ -1,5 +1,28 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function Forms() {
+  const router = useRouter();
+  const [user, setUser] = useState('');
+  const [pass, setPass] = useState('');
+
+  const login = async () => {
+    //console.log('usuario: ', user, ' contraseña: ', pass)
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({usuario: user, contraseña: pass})
+    })
+    const data = await response.json();
+    //console.log('data: ', data)
+    setTimeout(()=>{
+      if(!data.tipo_user) alert('Error en los datos')
+      else if(data.tipo_user == 'admin'){
+        router.push('/admin');
+      }
+    },10);
+  }
+
   return (
     <div className="bg-white px-10 py-10 rounded-3xl border-2 border-gray-100">
       <h1 className="text-5xl font-semibold ">Bienvenidos</h1>
@@ -11,7 +34,7 @@ export default function Forms() {
           <label className="text-lg font-medium">Email</label>
           <input
             className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
-            placeholder=" Ingresa tu email"
+            placeholder=" Ingresa tu email" type="text" value={user} onChange={(e) => {setUser(e.target.value)}}
           />
         </div>
         <div>
@@ -19,7 +42,7 @@ export default function Forms() {
           <input
             type="password"
             className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
-            placeholder=" Ingresa tu password"
+            placeholder=" Ingresa tu password" value={pass} onChange={(e) => setPass(e.target.value)}
           />
         </div>
         <div className="mt-8 flex justify-between items-center">
@@ -34,7 +57,8 @@ export default function Forms() {
           </button>
         </div>
         <div className="mt-8 flex flex-col gap-y-4">
-          <button className=" active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 bg-sky-500 text-white text-lg font-bold rounded-xl ">
+          <button className=" active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 bg-sky-500 text-white text-lg font-bold rounded-xl "
+           onClick={login}>
             Sign in
           </button>
           <button className="flex rounded-xl border-2 border-gray-100 py-3 items-center justify-center gap-2 active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all">
