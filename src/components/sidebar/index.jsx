@@ -1,5 +1,4 @@
 "use client";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import classNames from "classnames";
@@ -20,8 +19,6 @@ const menuItems = [
 export default function Sidebar() {
   const [toggleCollapse, setToggleCollapse] = useState(false);
   const [isCollapsible, setIsCollapsible] = useState(false);
-
-  const router = useRouter();
 
   const wrapperClasses = classNames(
     "h-screen px-4 pt-8 pb-4 bg-white flex justify-start flex-col",
