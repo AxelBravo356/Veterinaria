@@ -14,7 +14,7 @@ import {
 const menuItems = [
   { id: 1, label: "Home", icon: FaHome, link: "/admin" },
   { id: 2, label: "Usuarios", icon: FaUsers, link: "/admin/users" },
-  { id: 3, label: "Configuración", icon: FaTools, link: "/admin/config" },
+  { id: 3, label: "Registro usuarios", icon: FaTools, link: "/admin/register" },
 ];
 
 export default function Sidebar() {

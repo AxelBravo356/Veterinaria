@@ -7,7 +7,7 @@ export default function Users() {
     <div>
       <LayoutSideBar>
         <LayoutTable>
-          <UserTable />
+          <UserTable/>
         </LayoutTable>
       </LayoutSideBar>
     </div>
