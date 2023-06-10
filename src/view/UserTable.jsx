@@ -5,7 +5,7 @@ import {
   FaAngleRight,
   FaAngleDoubleRight,
 } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   flexRender,
   getCoreRowModel,
@@ -16,22 +16,30 @@ import { defaultData } from "@/utils/defaultData";
 import classNames from "classnames";
 
 export default function UserTable() {
-  const [data, setData] = useState(defaultData);
+  const [data, setData] = useState([]);
+  useEffect(async () => {
+          await fetch('/api/users/')
+            .then(async (res) => await res.json())
+            .then((users) => {
+              setData(users);
+            });
+      }, []);
+
   const columns = [
     {
       accessorKey: "Habilitar",
       header: () => <span>Habilitar</span>,
     },
     {
-      accessorKey: "ID",
+      accessorKey: "id_personal",
       header: () => <span>ID</span>,
     },
     {
-      accessorKey: "USUARIO",
+      accessorKey: "tipo_usu",
       header: () => <span>Usuario</span>,
     },
     {
-      accessorKey: "NOMBRE",
+      accessorKey: "nombre",
       header: () => <span>Nombre</span>,
     },
     {
@@ -61,9 +69,9 @@ export default function UserTable() {
                   {header.isPlaceholder
                     ? null
                     : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
                 </th>
               ))}
             </tr>
@@ -133,11 +141,11 @@ export default function UserTable() {
           </button>
         </div>
         <div className="text-black font-semibold">
-          Mostrando de {Number(table.getRowModel().rows[0].id) + 1} a{" "}
+          {/* Mostrando de {Number(table.getRowModel().rows[0].id) + 1} a{" "}
           {Number(
             table.getRowModel().rows[table.getRowModel().rows.length - 1].id
           ) + 1}{" "}
-          del total {defaultData.length} registros
+          del total {defaultData.length} registros */}
         </div>
         <select
           className="text-gray-600 border border-gray-300 rounded outline-indigo-600"
