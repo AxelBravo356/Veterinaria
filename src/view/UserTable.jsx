@@ -14,14 +14,21 @@ import {
 } from "@tanstack/react-table";
 import { defaultData } from "@/utils/defaultData";
 import classNames from "classnames";
+import Modal from "@/components/modal-modifier";
 
 export default function UserTable() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const [data, setData] = useState(defaultData);
   const columns = [
-    {
-      accessorKey: "Habilitar",
-      header: () => <span>Habilitar</span>,
-    },
     {
       accessorKey: "ID",
       header: () => <span>ID</span>,
@@ -38,7 +45,14 @@ export default function UserTable() {
       accessorKey: "EDITAR",
       header: () => <span>Editar</span>,
       cell: (info) => (
-        <button className="font-extrabold py-1">Modificar</button>
+        <div>
+          <button className="font-extrabold py-1" onClick={openModal}>
+            Modificar
+          </button>
+          <Modal isOpen={isModalOpen} onClose={closeModal}>
+            <h2>Contenido del modal</h2>
+          </Modal>
+        </div>
       ),
     },
   ];
@@ -139,16 +153,6 @@ export default function UserTable() {
           ) + 1}{" "}
           del total {defaultData.length} registros
         </div>
-        <select
-          className="text-gray-600 border border-gray-300 rounded outline-indigo-600"
-          onChange={(e) => {
-            table.setPageSize(Number(e.target.value));
-          }}
-        >
-          <option value="5">5 pág.</option>
-          <option value="10">10 pág.</option>
-          <option value="15">15 pág.</option>
-        </select>
       </div>
     </div>
   );
