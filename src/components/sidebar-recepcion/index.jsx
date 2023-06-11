@@ -13,11 +13,11 @@ import {
 } from "react-icons/fa";
 
 const menuItems = [
-  { id: 1, label: "Home", icon: FaHome, link: "/recepcion" },
-  { id: 2, label: "Citas", icon: FaCalendarAlt, link: "/" },
-  { id: 3, label: "Carnets", icon: FaBookMedical, link: "/" },
-  { id: 4, label: "En observación", icon: FaBandAid, link: "/" },
-  { id: 5, label: "Configuración", icon: FaTools, link: "/" },
+  { id: 1, label: "Home", icon: FaHome, link: "/recepcion/" },
+  { id: 2, label: "Citas", icon: FaCalendarAlt, link: "/recepcion/citas/" },
+  { id: 3, label: "Carnets", icon: FaBookMedical, link: "/recepcion/carnets/" },
+  { id: 4, label: "En observación", icon: FaBandAid, link: "/recepcion/observacion/" },
+  { id: 5, label: "Configuración", icon: FaTools, link: "/recepcion/config/" },
 ];
 
 export default function SidebarRecepcion() {
