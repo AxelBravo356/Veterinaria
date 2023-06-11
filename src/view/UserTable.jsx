@@ -5,7 +5,7 @@ import {
   FaAngleRight,
   FaAngleDoubleRight,
 } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   flexRender,
   getCoreRowModel,
@@ -17,7 +17,6 @@ import classNames from "classnames";
 import Modal from "@/components/modal-modifier";
 
 export default function UserTable() {
-<<<<<<< HEAD
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -32,32 +31,14 @@ export default function UserTable() {
   const columns = [
     {
       accessorKey: "ID",
-=======
-  const [data, setData] = useState([]);
-  useEffect(async () => {
-          await fetch('/api/users/')
-            .then(async (res) => await res.json())
-            .then((users) => {
-              setData(users);
-            });
-      }, []);
-
-  const columns = [
-    {
-      accessorKey: "Habilitar",
-      header: () => <span>Habilitar</span>,
-    },
-    {
-      accessorKey: "id_personal",
->>>>>>> 41e6cbe7c80a5b522958c0e9ef76be5c0c2ecc62
       header: () => <span>ID</span>,
     },
     {
-      accessorKey: "tipo_usu",
+      accessorKey: "USUARIO",
       header: () => <span>Usuario</span>,
     },
     {
-      accessorKey: "nombre",
+      accessorKey: "NOMBRE",
       header: () => <span>Nombre</span>,
     },
     {
@@ -94,9 +75,9 @@ export default function UserTable() {
                   {header.isPlaceholder
                     ? null
                     : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
                 </th>
               ))}
             </tr>
@@ -166,11 +147,11 @@ export default function UserTable() {
           </button>
         </div>
         <div className="text-black font-semibold">
-          {/* Mostrando de {Number(table.getRowModel().rows[0].id) + 1} a{" "}
+          Mostrando de {Number(table.getRowModel().rows[0].id) + 1} a{" "}
           {Number(
             table.getRowModel().rows[table.getRowModel().rows.length - 1].id
           ) + 1}{" "}
-          del total {defaultData.length} registros */}
+          del total {defaultData.length} registros
         </div>
       </div>
     </div>
