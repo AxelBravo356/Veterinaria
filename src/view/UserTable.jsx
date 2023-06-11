@@ -18,12 +18,12 @@ import classNames from "classnames";
 export default function UserTable() {
   const [data, setData] = useState([]);
   useEffect(async () => {
-          await fetch('/api/users/')
-            .then(async (res) => await res.json())
-            .then((users) => {
-              setData(users);
-            });
-      }, []);
+    await fetch("/api/users/")
+      .then(async (res) => await res.json())
+      .then((users) => {
+        setData(users);
+      });
+  }, []);
 
   const columns = [
     {
@@ -69,9 +69,9 @@ export default function UserTable() {
                   {header.isPlaceholder
                     ? null
                     : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
                 </th>
               ))}
             </tr>
