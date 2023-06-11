@@ -76,7 +76,7 @@ CREATE TABLE Citas
   FOREIGN KEY (id_carnet) REFERENCES Carnet(id_carnet)
 );
 
-CREATE TABLE Observación
+CREATE TABLE Observacion
 (
   id_obs INT NOT NULL AUTO_INCREMENT,
   estancia VARCHAR(50) NOT NULL,

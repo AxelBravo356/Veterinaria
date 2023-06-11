@@ -19,7 +19,12 @@ export default function Forms() {
       if(!data.tipo_user) alert('Error en los datos')
       else if(data.tipo_user == 'admin'){
         router.push('/admin');
+      }else if(data.tipo_user == 'enfermera'){
+        router.push('/enfermera');
+      }else if(data.tipo_user == 'medico'){
+        router.push('/medico');
       }
+      
     },10);
   }
 

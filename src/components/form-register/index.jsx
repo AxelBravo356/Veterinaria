@@ -12,23 +12,6 @@ export default function FormRegister() {
   const [correo, setCorreo] = useState('');
   const [pass, setPass] = useState('');
 
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch('/api/users')
-      .then(async (res) => await res.json())
-      .then((data) => {
-        setData(data);
-        console.log(data);
-      });
-  }, []);
-
-  const handle = async (e) => {
-    e.preventDefault();
-    const res = await axios.post('/api', {
-      name: document.querySelector('#name').value
-    });
-  }
-
     const register = async () => {
       console.log('tipo: ', tipo)
       if (tipo == '') alert('Seleccione tipo')
