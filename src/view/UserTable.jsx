@@ -5,7 +5,7 @@ import {
   FaAngleRight,
   FaAngleDoubleRight,
 } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   flexRender,
   getCoreRowModel,
@@ -14,45 +14,39 @@ import {
 } from "@tanstack/react-table";
 import { defaultData } from "@/utils/defaultData";
 import classNames from "classnames";
-import Modal from "@/components/modal-modifier";
 
 export default function UserTable() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [data, setData] = useState([]);
+  useEffect(async () => {
+    await fetch("/api/users/")
+      .then(async (res) => await res.json())
+      .then((users) => {
+        setData(users);
+      });
+  }, []);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const [data, setData] = useState(defaultData);
   const columns = [
     {
-      accessorKey: "ID",
+      accessorKey: "Habilitar",
+      header: () => <span>Habilitar</span>,
+    },
+    {
+      accessorKey: "id_personal",
       header: () => <span>ID</span>,
     },
     {
-      accessorKey: "USUARIO",
+      accessorKey: "tipo_usu",
       header: () => <span>Usuario</span>,
     },
     {
-      accessorKey: "NOMBRE",
+      accessorKey: "nombre",
       header: () => <span>Nombre</span>,
     },
     {
       accessorKey: "EDITAR",
       header: () => <span>Editar</span>,
       cell: (info) => (
-        <div>
-          <button className="font-extrabold py-1" onClick={openModal}>
-            Modificar
-          </button>
-          <Modal isOpen={isModalOpen} onClose={closeModal}>
-            <h2>Contenido del modal</h2>
-          </Modal>
-        </div>
+        <button className="font-extrabold py-1">Modificar</button>
       ),
     },
   ];
@@ -147,12 +141,22 @@ export default function UserTable() {
           </button>
         </div>
         <div className="text-black font-semibold">
-          Mostrando de {Number(table.getRowModel().rows[0].id) + 1} a{" "}
+          {/* Mostrando de {Number(table.getRowModel().rows[0].id) + 1} a{" "}
           {Number(
             table.getRowModel().rows[table.getRowModel().rows.length - 1].id
           ) + 1}{" "}
-          del total {defaultData.length} registros
+          del total {defaultData.length} registros */}
         </div>
+        <select
+          className="text-gray-600 border border-gray-300 rounded outline-indigo-600"
+          onChange={(e) => {
+            table.setPageSize(Number(e.target.value));
+          }}
+        >
+          <option value="5">5 pág.</option>
+          <option value="10">10 pág.</option>
+          <option value="15">15 pág.</option>
+        </select>
       </div>
     </div>
   );
