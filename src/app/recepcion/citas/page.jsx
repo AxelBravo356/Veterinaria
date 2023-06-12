@@ -1,15 +1,15 @@
 "use client";
-import Layout from '@/components/layout-recepcion'
-import Link from 'next/link';
-import React from 'react'
-
-
-export  default function Citas() {
+import Layout from "@/components/layout-recepcion";
+import Link from "next/link";
+import React from "react";
+import Calendar from "@/components/calendar";
+import TablaCitas from "@/components/calendar-citas";
+export default function Citas() {
   return (
     <>
-        <Layout>
-        <Link href={"/recepcion/citas/registro"}><button>Agendar</button></Link>
-        </Layout>
+      <Layout>
+        <TablaCitas />
+      </Layout>
     </>
-  )
+  );
 }
