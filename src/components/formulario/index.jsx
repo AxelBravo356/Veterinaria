@@ -20,7 +20,7 @@ export default function Forms() {
       else if(data.tipo_user == 'admin'){
         router.push('/admin');
       }else if(data.tipo_user == 'enfermera'){
-        router.push('/enfermera');
+        router.push('/recepcion');
       }else if(data.tipo_user == 'medico'){
         router.push('/medico');
       }

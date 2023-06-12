@@ -85,6 +85,7 @@ export default function UserTable() {
             >
               {row.getVisibleCells().map((cell) => (
                 <td key={cell.id} className="py-2 px-14 ">
+                  {console.log(row.original)}
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
