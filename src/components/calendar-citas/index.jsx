@@ -1,14 +1,7 @@
 import { useState } from "react";
 import { FaPlus, FaCaretRight, FaCaretLeft } from "react-icons/fa";
 import Link from "next/link";
-import {
-  format,
-  isSameMonth,
-  isToday,
-  addDays,
-  addMonths,
-  isSameDay,
-} from "date-fns";
+import { format, isSameMonth, isToday, addDays, isSameDay } from "date-fns";
 
 export default function TablaCitas() {
   const [appointments, setAppointments] = useState([]);

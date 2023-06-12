@@ -7,7 +7,6 @@ function RegistroCitas() {
     <>
       <Layout>
         <CitaForm></CitaForm>
-        <Calendar />
       </Layout>
     </>
   );
