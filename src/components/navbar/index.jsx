@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import Servicios from "../servicios";
+import Link from "next/link";
 
 export default function Navbar() {
-  
   const Links = [
-    { name: "CONTÁCTANOS", link: "/" },
-    { name: "SERVICIOS", link: "/" },
+    { name: "CONTÁCTANOS", link: "#contactanos" },
+    { name: "SERVICIOS", link: "#servicios" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -19,7 +20,12 @@ export default function Navbar() {
       text-gray-800"
         >
           <span>
-            <Image src={"/Logo.png"} width={200} height={200} className="object-cover max-h-12 max-w-xl" />
+            <Image
+              src={"/Logo.png"}
+              width={200}
+              height={200}
+              className="object-cover max-h-12 max-w-xl"
+            />
           </span>
         </div>
 
@@ -27,7 +33,7 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
         >
-          <ion-icon ></ion-icon>
+          <ion-icon></ion-icon>
           <svg
             name={open ? "close" : "menu"}
             xmlns="http://www.w3.org/2000/svg"
@@ -52,12 +58,14 @@ export default function Navbar() {
         >
           {Links.map((link) => (
             <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
-              <a
+              <Link
                 href={link.link}
+                smooth={true}
+                duration={800}
                 className="text-white  hover:text-gray-950 duration-500 "
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
