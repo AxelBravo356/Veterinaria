@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Servicios() {
   return (
-    <div className="p-5">
+    <div className="p-5" id="servicios">
       <div className="flex grid-cols-3">
         <div className="border w-1/6">
           <Image
