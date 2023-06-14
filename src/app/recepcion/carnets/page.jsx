@@ -1,11 +1,14 @@
 import Layout from '@/components/layout-recepcion'
 import React from 'react'
-import Link from 'next/link'
+import LayoutTable from '@/components/layout-table-carnets'
+import CarnetTable from '@/view/CarnetTable'
 function Carnets() {
   return (
     <>
         <Layout>
-        <Link href={"/recepcion/carnets/registro"}><button>Nuevo Carnet</button></Link>
+        <LayoutTable>
+          <CarnetTable></CarnetTable>
+        </LayoutTable>
         </Layout>
     </>
   )
