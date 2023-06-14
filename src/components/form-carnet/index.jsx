@@ -1,5 +1,6 @@
 "use client";
 import { add } from 'date-fns';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
 const razas = [
@@ -21,6 +22,7 @@ const tipos = [
 ];
 
 export default function CarnetForm() {
+  const router = useRouter();
   const [nomMas, setNomMas] = useState("");
   const [edad, setEdad] = useState(0);
   const [nameDue, setNomDue] = useState("");
@@ -35,7 +37,7 @@ export default function CarnetForm() {
     let val_err = "";
     const data = {nomMas, edad, nameDue, address, phone, raza, tipo, peso, desc};
     console.log(data)
-    
+
     if(data.nomMas == "" ) val_err+='Nombre de la mascota,';
     if(data.edad == "" || Number(data.edad) <= 0 || Number(data.edad) >= 25) val_err+=' Edad de la mascota';
     if(data.nameDue == "") val_err+=' Nombre del dueño,';
@@ -47,6 +49,18 @@ export default function CarnetForm() {
     if(val_err != "") alert('Existe un error en los campos: '+val_err)
     else{ 
       console.log('Se envian datos')
+      const response = await fetch("/api/carnets",{
+        method: 'POST',
+        body: JSON.stringify(data),
+      });
+      const res = await response.json();
+      console.log("data recv: ", res);
+      setTimeout(()=>{
+        if (!res.register) alert("Error en el registro");
+        else {
+          router.push("/recepcion/carnets");
+        }
+      },10)
     }
 
   }
