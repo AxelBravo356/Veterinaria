@@ -60,8 +60,6 @@ export default function Navbar() {
             <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
               <Link
                 href={link.link}
-                smooth={true}
-                duration={800}
                 className="text-white  hover:text-gray-950 duration-500 "
               >
                 {link.name}
