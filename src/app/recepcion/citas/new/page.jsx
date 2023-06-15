@@ -1,15 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useTasks } from "@/context/TasksContext";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import Layout from "@/components/layout-recepcion";
-import { format } from "date-fns";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import TimePicker from "react-time-picker";
-import "react-time-picker/dist/TimePicker.css";
 
 export default function New({ params }) {
   const { tasks, createTask, updateTask } = useTasks();
@@ -51,7 +46,7 @@ export default function New({ params }) {
       <Layout>
         <div className="mx-auto">
           <div className="mx-auto py-6 px-4">
-            <h1 className="text-black text-5xl mb-2">Nuevas Citas</h1>
+            <h1 className="text-black text-5xl mb-2">Citas</h1>
             <div className="w-full py-1 bg-sky-500"></div>
           </div>
           <form onSubmit={onSubmit} className="rounded-xl mt-5 bg-sky-50 mx-16">
