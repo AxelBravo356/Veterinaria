@@ -11,7 +11,9 @@ export const CitasCard = ({ task }) => {
       onClick={() => router.push(`/recepcion/citas/edit/${task.id}`)}
     >
       <div className="flex justify-between">
-        <h1>{task.title}</h1>
+        <h1>
+          <strong>Nombre de la mascota:</strong> {task.mascota}
+        </h1>
         <button
           className="bg-red-700 hover:bg-red-600 px-3 py-1 inline-flex items-center text-white rounded-md"
           onClick={(e) => {
@@ -26,7 +28,27 @@ export const CitasCard = ({ task }) => {
           Delete
         </button>
       </div>
-      <p>{task.description}</p>
+      <div className="flex justify-between mt-2">
+        <p>
+          <strong>Nombre del dueño: </strong>
+          {task.dueño}
+        </p>
+        <p className="">
+          <strong>Fecha: </strong>
+          {task.fecha}
+        </p>{" "}
+        <p>
+          <strong>Hora:</strong> {task.hora}
+        </p>
+        <p>
+          <strong>Doctor: </strong>
+          {task.doctor}
+        </p>
+        <p>
+          <strong>Consultorio: </strong>
+          {task.consultorio}
+        </p>
+      </div>
       <span className="text-gray-400 text-xs"> {task.id}</span>
     </div>
   );

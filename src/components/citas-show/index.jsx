@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 export default function CitasShow() {
   const router = useRouter();
   const { tasks } = useTasks();
+  console.log(tasks);
   return (
     <div>
       <div className="mx-auto py-6 px-4">
