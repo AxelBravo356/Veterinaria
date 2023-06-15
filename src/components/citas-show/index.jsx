@@ -22,7 +22,7 @@ export default function CitasShow() {
         <div className="w-full py-1 bg-sky-500"></div>
       </div>
       <div className="flex justify-center">
-        <div className="w-7/12 ">
+        <div className="xl:w-7/12 ">
           {tasks.map((task) => (
             <CitasCard task={task} key={task.id} />
           ))}
