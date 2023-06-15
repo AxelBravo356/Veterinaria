@@ -37,6 +37,7 @@ export default function ProfessionalService() {
                   width={400}
                   height={400}
                   className="w-auto"
+                  alt="Presentación1"
                 />
               </div>
               <div className="w-1/2 text-right">
@@ -66,6 +67,7 @@ export default function ProfessionalService() {
                   width={400}
                   height={400}
                   className="w-auto"
+                  alt="Presentación1"
                 />
               </div>
               <div className="w-1/2 text-right">

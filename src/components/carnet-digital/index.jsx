@@ -23,6 +23,7 @@ export default function CarnetDigital() {
             width={500}
             height={500}
             className="object-fill drop-shadow-lg  "
+            alt="Presentación"
           />
         </div>
       </div>

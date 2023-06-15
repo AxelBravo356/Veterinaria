@@ -20,6 +20,7 @@ export default function NavAdmin() {
               width={200}
               height={200}
               className="object-cover max-h-12 max-w-xl"
+              alt="Logo"
             />
           </span>
         </div>

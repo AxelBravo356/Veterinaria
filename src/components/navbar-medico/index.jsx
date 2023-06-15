@@ -3,10 +3,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar() {
-  
   const Links = [
     { name: "Cerrar sesion", link: "/" },
-    {name: "Nombre medico", link: "/"},
+    { name: "Nombre medico", link: "/" },
     { image: "/Male User.png", link: "/" },
   ];
 
@@ -20,7 +19,13 @@ export default function Navbar() {
       text-gray-800"
         >
           <span>
-            <Image src={"/Logo.png"} width={200} height={200} className="object-cover max-h-12 max-w-xl" />
+            <Image
+              src={"/Logo.png"}
+              width={200}
+              height={200}
+              className="object-cover max-h-12 max-w-xl"
+              alt="Logo"
+            />
           </span>
         </div>
 
@@ -28,7 +33,7 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
         >
-          <ion-icon ></ion-icon>
+          <ion-icon></ion-icon>
           <svg
             name={open ? "close" : "menu"}
             xmlns="http://www.w3.org/2000/svg"
@@ -53,18 +58,18 @@ export default function Navbar() {
         >
           {Links.map((link) => (
             <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
-                {link.image ? (
-                    <a href={link.link}>
-                    <Image src={link.image} width={68} height={68} />
-                    </a>
-                ) : (
-              <a
-                href={link.link}
-                className="text-white  hover:text-gray-950 duration-500 "
-              >
-                {link.name}
-              </a>
-                )}
+              {link.image ? (
+                <a href={link.link}>
+                  <Image src={link.image} width={68} height={68} alt="Icono" />
+                </a>
+              ) : (
+                <a
+                  href={link.link}
+                  className="text-white  hover:text-gray-950 duration-500 "
+                >
+                  {link.name}
+                </a>
+              )}
             </li>
           ))}
         </ul>

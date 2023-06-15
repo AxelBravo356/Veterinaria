@@ -19,12 +19,13 @@ export default function Navbar() {
           className="font-bold text-xl cursor-pointer flex items-center font-[Poppins] 
       text-gray-800"
         >
-          <span>
+          <span className="max-h-12 max-w-xl">
             <Image
               src={"/Logo.png"}
               width={200}
               height={200}
-              className="object-cover max-h-12 max-w-xl"
+              className="object-cover "
+              alt="Logo"
             />
           </span>
         </div>

@@ -11,6 +11,7 @@ export default function Servicios() {
             width={500}
             height={500}
             className="h-full object-fill"
+            alt="Presentación-Izquierda"
           />
         </div>
         <div className=" w-4/6  grid-rows-4 bg-gray-200">
@@ -47,6 +48,7 @@ export default function Servicios() {
             width={500}
             height={500}
             className="h-full object-fill"
+            alt="Presentación-Derecha"
           />
         </div>
       </div>
