@@ -16,7 +16,7 @@ export default function LayoutTable(props) {
                     <div></div>
                     <div></div>
                     <Link href={"/recepcion/carnets/registro"}>
-                        <button className="bg-sky-600 text-white p-2 rounded-lg">Nuevo Carnet</button>
+                        <p className="bg-sky-600 text-white p-2 rounded-lg">Nuevo Carnet</p>
                     </Link>
                 </div>
                 {props.children}

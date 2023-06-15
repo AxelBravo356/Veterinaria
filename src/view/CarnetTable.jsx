@@ -14,15 +14,22 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 
+
 export default function CarnetTable() {
   const [data, setData] = useState([]);
-  useEffect(async () => {
-    await fetch("/api/carnets/")
+
+  useEffect(() => {
+    fetch("/api/carnets/")
       .then(async (res) => await res.json())
       .then((data) => {
         setData(data);
       });
   }, []);
+  
+  const handleEditar = (info) => {
+    console.log("Editar fila:", info.cell.row.original);
+    alert('Se va a modificar el carnet con id: ' + info.cell.row.original.id_carnet)
+  };
 
   const columns = [
     {
@@ -39,13 +46,13 @@ export default function CarnetTable() {
     },
     {
         accessorKey: "raza",
-        header: () => <span>Raza</span>,
+        header: () => <span>Especie</span>,
     },
     {
       accessorKey: "EDITAR",
       header: () => <span>Editar</span>,
       cell: (info) => (
-        <button className="font-extrabold py-1">Modificar</button>
+        <button className="font-extrabold py-1" onClick={() => handleEditar(info)}>Modificar</button>
       ),
     },
   ];
@@ -84,7 +91,8 @@ export default function CarnetTable() {
             >
               {row.getVisibleCells().map((cell) => (
                 <td key={cell.id} className="py-2 px-14 ">
-                  {console.log(row.original)}
+                  {/* {console.log(cell.getValue())}
+                  {console.log(row.original.id_carnet)}  */}
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}

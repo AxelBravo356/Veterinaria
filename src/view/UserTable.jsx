@@ -17,13 +17,19 @@ import classNames from "classnames";
 
 export default function UserTable() {
   const [data, setData] = useState([]);
-  useEffect(async () => {
-    await fetch("/api/users/")
+  useEffect(() => {
+    fetch("/api/users/")
       .then(async (res) => await res.json())
       .then((users) => {
         setData(users);
       });
   }, []);
+
+  
+  const handleEditar = (info) => {
+    console.log("Editar fila:", info.cell.row.original);
+    alert('Se va a modificar el usuario con id: ' + info.cell.row.original.id_personal)
+  };
 
   const columns = [
     {
@@ -46,7 +52,7 @@ export default function UserTable() {
       accessorKey: "EDITAR",
       header: () => <span>Editar</span>,
       cell: (info) => (
-        <button className="font-extrabold py-1">Modificar</button>
+        <button className="font-extrabold py-1" onClick={() => handleEditar(info)}>Modificar</button>
       ),
     },
   ];
