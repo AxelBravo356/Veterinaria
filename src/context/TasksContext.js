@@ -16,12 +16,16 @@ export const TaskProvideer = ({ children }) => {
   const [tasks, setTasks] =useLocalStorage('tasks', [])
   
 
-  const createTask = (title, description) =>
+  const createTask = (mascota, dueño, fecha, hora, doctor, consultorio) =>
     setTasks([
       ...tasks,
       {
-        title,
-        description,
+        mascota,
+        dueño,
+        fecha, 
+        hora, 
+        doctor,
+        consultorio,
         id: uuid(),
       },
     ]);
