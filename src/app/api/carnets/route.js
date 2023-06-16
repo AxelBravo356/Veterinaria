@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import {pool} from "../../../utils/db/database";
 
 export async function GET(request){
-    //const [rows] = await pool.query('SELECT id_carnet, nom_mascota, nom_dueño, raza  FROM Carnet');
-    const [rows] = await pool.query('SELECT id_carnet, nom_mascota, nom_dueno, raza  FROM Carnet');
+    const [rows] = await pool.query('SELECT id_carnet, nom_mascota, nom_dueño, raza  FROM Carnet');
+    //const [rows] = await pool.query('SELECT id_carnet, nom_mascota, nom_dueno, raza  FROM Carnet');
     return NextResponse.json(rows)
 }
 
