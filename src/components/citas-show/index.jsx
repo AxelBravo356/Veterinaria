@@ -13,7 +13,7 @@ export default function CitasShow() {
         <div className="flex justify-between">
           <h1 className="text-black text-5xl mb-2">Citas</h1>
           <button
-            onClick={() => router.push("./recepcion/citas/new")}
+            onClick={() => router.push("/recepcion/citas/new")}
             className="bg-green-400 rounded-xl mb-2 px-5"
           >
             Crear nueva cita

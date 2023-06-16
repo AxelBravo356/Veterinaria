@@ -50,7 +50,7 @@ export default function Forms() {
             placeholder=" Ingresa tu password" value={pass} onChange={(e) => setPass(e.target.value)}
           />
         </div>
-        <div className="mt-8 flex justify-between items-center">
+        {/* <div className="mt-8 flex justify-between items-center">
           <div>
             <input type="checkbox" id="remember" />
             <label className="ml-2 font-medium text-base " for="remember">
@@ -60,7 +60,7 @@ export default function Forms() {
           <button className="font-medium text-base text-sky-500">
             Olvidé la contraseña
           </button>
-        </div>
+        </div> */}
         <div className="mt-8 flex flex-col gap-y-4">
           <button className=" active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 bg-sky-500 text-white text-lg font-bold rounded-xl "
            onClick={login}>
@@ -94,10 +94,10 @@ export default function Forms() {
             Sign in with Google
           </button>
         </div>
-        <div className="mt-8 flex justify-centern items-center">
+        {/* <div className="mt-8 flex justify-centern items-center">
           <p className="font-medium text-base">¿No tienes cuenta?</p>
           <button className="text-sky-500 text-base font-medium ml-2">Sign Up</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

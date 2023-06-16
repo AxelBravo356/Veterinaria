@@ -21,7 +21,7 @@ export default function New({ params }) {
       updateTask(params.id, data);
       toast.success("Cita actualizada correctamente");
     } else {
-      createTask(data.mascota, data.dueño, data.fecha, data.hora, data.doctor);
+      createTask(data.mascota, data.dueño, data.fecha, data.hora, data.doctor, data.consultorio);
       toast.success("Cita creada correctamente");
     }
     router.push("/recepcion/citas");

@@ -1,6 +1,7 @@
 import Forms from "@/components/formulario";
 import "./styles.form.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Login() {
   return (
@@ -9,7 +10,7 @@ export default function Login() {
         <Forms />
       </div>
       <div className="hidden relative lg:flex h-full w-1/2 items-start justify-center">
-        <Image src={"/Logo.png"} width={500} height={500} alt="Logo" />
+        <Link href={"/"}><Image src={"/Logo.png"} width={500} height={500} alt="Logo" /></Link>
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function NavAdmin() {
-  const Links = [{ name: "CONTÁCTANOS" }, { name: "SERVICIOS" }];
-
+  //const Links = [{ name: "CONTÁCTANOS" }, { name: "SERVICIOS" }];
+  const Links = [{name: "Cerrar Sesión", link: "/login"}]
   const [open, setOpen] = useState(false);
 
   return (
@@ -52,11 +53,17 @@ export default function NavAdmin() {
             open ? "top-24 " : "top-[-490px]"
           }`}
         >
-          {Links.map((link) => (
+          {/* {Links.map((link) => (
             <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
               {link.name}
             </li>
-          ))}
+          ))} */}
+
+          {
+            Links.map((link)=>(
+              <Link href={link.link}>{link.name}</Link>
+            ))
+          }
         </ul>
       </div>
     </div>

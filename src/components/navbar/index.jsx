@@ -8,6 +8,7 @@ export default function Navbar() {
   const Links = [
     { name: "CONTÁCTANOS", link: "#contactanos" },
     { name: "SERVICIOS", link: "#servicios" },
+    { name: "Login", link:"/login"},
   ];
 
   const [open, setOpen] = useState(false);
@@ -19,12 +20,12 @@ export default function Navbar() {
           className="font-bold text-xl cursor-pointer flex items-center font-[Poppins] 
       text-gray-800"
         >
-          <span className="max-h-12 max-w-xl">
+          <span className="">
             <Image
               src={"/Logo.png"}
               width={200}
               height={200}
-              className="object-cover "
+              className="object-cover max-h-12 max-w-xl "
               alt="Logo"
             />
           </span>
