@@ -41,8 +41,8 @@ export default function CarnetTable() {
       header: () => <span>Mascota</span>,
     },
     {
-      // accessorKey: "nom_dueño",
-      accessorKey: "nom_dueno",
+      accessorKey: "nom_dueño",
+      //accessorKey: "nom_dueno",
       header: () => <span>Dueño</span>,
     },
     {
