@@ -28,14 +28,14 @@ export default function UserTable() {
   
   const handleEditar = (info) => {
     console.log("Editar fila:", info.cell.row.original);
-    alert('Se va a modificar el usuario con id: ' + info.cell.row.original.id_personal)
+    alert('Se va a modificar el usuario con id: ' + info.cell.row.original.id_personal + ' con la info: ' + JSON.stringify(info.cell.row.original))
   };
 
   const columns = [
-    {
-      accessorKey: "Habilitar",
-      header: () => <span>Habilitar</span>,
-    },
+    // {
+    //   accessorKey: "Habilitar",
+    //   header: () => <span>Habilitar</span>,
+    // },
     {
       accessorKey: "id_personal",
       header: () => <span>ID</span>,

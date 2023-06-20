@@ -28,7 +28,7 @@ export default function CarnetTable() {
   
   const handleEditar = (info) => {
     console.log("Editar fila:", info.cell.row.original);
-    alert('Se va a modificar el carnet con id: ' + info.cell.row.original.id_carnet)
+    alert('Se va a modificar el carnet con id y datos: ' + JSON.stringify(info.cell.row.original))
   };
 
   const columns = [
@@ -48,6 +48,14 @@ export default function CarnetTable() {
     {
         accessorKey: "raza",
         header: () => <span>Especie</span>,
+    },
+    {
+      accessorKey: "telefono",
+      header: () => <span>Telefono</span>,
+    },
+    {
+      accessorKey: "descripcion",
+      header: () => <span>Descripcion</span>,
     },
     {
       accessorKey: "EDITAR",

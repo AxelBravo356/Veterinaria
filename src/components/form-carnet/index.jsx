@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const razas = [
-  { key: "def", value: "", raza: "Seleccione una raza" },
+  { key: "def", value: "", raza: "Seleccione una especie" },
   { key: "perro", value: "perro", raza: "Perro" },
   { key: "gato", value: "gato", raza: "Gato" },
   { key: "ave", value: "ave", raza: "Ave" },
@@ -15,7 +15,7 @@ const razas = [
   { key: "otro", value: "otro", raza: "Otro" },
 ];
 const tipos = [
-  { key: "def", value: "", tipo: "Seleccione un tipo" },
+  { key: "def", value: "", tipo: "Seleccione un tamaño" },
   { key: "pequeño", value: "pequeño", tipo: "Pequeño" },
   { key: "mediano", value: "mediano", tipo: "Mediano" },
   { key: "grande", value: "grande", tipo: "Grande" },
@@ -28,6 +28,7 @@ export default function CarnetForm() {
   const [nameDue, setNomDue] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+  const [correo, setCorreo] = useState("");
   const [raza, setRaza] = useState("");
   const [tipo, setTipo] = useState("");
   const [peso, setPeso] = useState(0);
@@ -45,6 +46,7 @@ export default function CarnetForm() {
       tipo,
       peso,
       desc,
+      correo,
     };
     console.log(data);
 
@@ -59,6 +61,7 @@ export default function CarnetForm() {
     if (data.tipo == "") val_err += " Tipo,";
     if (data.peso == "" || Number(data.peso) <= 0 || Number(data.peso) >= 80)
       val_err += " Peso,";
+    if(data.correo == "") val_err += " Correo,";
     if (val_err != "") alert("Existe un error en los campos: " + val_err);
     else {
       console.log("Se envian datos");
@@ -159,11 +162,25 @@ export default function CarnetForm() {
               onChange={(e) => setPhone(e.target.value)}
             ></input>
           </div>
+          <div>
+            <label htmlFor="correo" className="text-lg font-bold">
+                Correo:
+              </label>
+              <input
+                className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
+                type="email"
+                id="correo"
+                name="correo"
+                value={correo}
+                placeholder="dueño@gmail.com"
+                onChange={(e) => setCorreo(e.target.value)}
+              ></input>
+          </div>
         </div>
         <div>
           <div>
             <label htmlFor="raza" className="text-lg font-bold">
-              Seleccione una raza:{" "}
+              Seleccione una especie de animal:{" "}
             </label>
             <select
               className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
@@ -181,7 +198,7 @@ export default function CarnetForm() {
           </div>
           <div>
             <label htmlFor="tipo" className="text-lg font-bold">
-              Tipo de animal:
+              Tamaño:
             </label>
             <select
               className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
