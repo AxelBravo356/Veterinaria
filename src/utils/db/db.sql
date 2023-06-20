@@ -10,6 +10,7 @@ CREATE TABLE Carnet
   tipo_animal VARCHAR(50) NOT NULL,
   peso FLOAT NOT NULL,
   descripcion VARCHAR(500) NOT NULL,
+  correo VARCHAR(50) NOT NULL,
   PRIMARY KEY (id_carnet)
 );
 
