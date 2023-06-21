@@ -1,15 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { transporter, email } from './nodemailer';
+import { transporter, email, mailOptions } from './nodemailer';
 
 export async function POST(request) {
     const data = await request.json()
     console.log(data)
     try {
         await transporter.sendMail({
-            mailOptions:{
-                from: email,
-                to: email,
-            },
+            ...mailOptions,
             subject: "Bienvenido a la familia Petmon",
             text: "This is a test string",
             html: "<h1>Bienvenido</h1><p>Te damos la bienvenida a la familia petmon</p>",
